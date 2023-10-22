@@ -1,0 +1,13 @@
+const fs = require('fs').promises;
+
+async function readFile(filePath){
+   try{
+    const data = await fs.readFile(filePath);
+    console.log(data.toString());
+    const data1 = data.toString();
+    fs.writeFile('xyz.txt',data1)
+   }catch(error){
+    console.error('Error: $(error.message)')
+   }
+}
+   readFile('abc.txt')
